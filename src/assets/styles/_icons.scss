@@ -1,0 +1,15 @@
+@mixin icon($svgPath) {
+  mask-image: url($svgPath);
+  mask-repeat: no-repeat;
+  background-color: currentColor;
+  background-size: 1.8rem 1.8rem;
+  width: 1.8rem;
+  height: 1.8rem;
+  display: inline-block;
+}
+
+.i-chevron-right {
+  @include icon('../icons/chevron-right.svg');
+}
+
+
