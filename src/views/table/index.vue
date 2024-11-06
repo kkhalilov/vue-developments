@@ -1,5 +1,5 @@
 <template>
-  <div class="table">
+  <div class="tree-table">
     <base-table class="categories">
       <template #head>
         <base-table-row>
@@ -37,7 +37,7 @@ const list = ref([...tableData]);
 @use "sass:map";
 @use "@/assets/styles/colors" as *;
 
-.table {
+.tree-table {
   padding: 2rem 0;
   max-width: 120rem;
   margin: 0 auto;

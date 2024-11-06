@@ -14,5 +14,14 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          // silenceDeprecations: ['legacy-js-api']
+          api: 'modern-compiler',
+          // additionalData: `@use "@/assets/styles/colors" as *;`,
+        }
+      }
+    },
   },
 })
