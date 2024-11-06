@@ -146,7 +146,7 @@ const onCollapseItem = (item) => {
       }
     }
 
-    &_last .table-row {
+    &_last.table-row {
       .table-cell {
         border-bottom: 1px solid transparent;
       }
