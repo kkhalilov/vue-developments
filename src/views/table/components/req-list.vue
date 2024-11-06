@@ -3,7 +3,11 @@
     v-for="(item, idx) in list"
     :key="idx"
     class="categories-list__item"
-    :class="{'!mb-0': depth, 'categories-list__item_parent': !depth}"
+    :class="{
+      '!mb-0': depth,
+      'categories-list__item_parent': !depth,
+      'categories-list__item_last':  idx === list?.length - 1 && !item.isCollapsed
+    }"
     :is-collapsed="item.isCollapsed"
   >
     <base-table-cell width="54%">
@@ -139,6 +143,18 @@ const onCollapseItem = (item) => {
           border-bottom: 0;
           position: relative;
         }
+      }
+    }
+
+    &_last .table-row {
+      .table-cell {
+        border-bottom: 1px solid transparent;
+      }
+    }
+
+    &_last &-wrapper {
+      &:after {
+        border-bottom: 1px solid transparent;
       }
     }
 
