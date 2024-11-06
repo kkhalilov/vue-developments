@@ -28,7 +28,7 @@
 import { BaseTable, BaseTableRow, BaseTableHeadCell } from '@/components/elements-ui'
 import ReqList from './components/req-list.vue';
 import { ref } from 'vue'
-import {tableData} from '@/const/index.js'
+import {tableData} from '@/const'
 
 const list = ref([...tableData]);
 </script>
