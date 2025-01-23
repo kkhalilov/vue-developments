@@ -26,8 +26,7 @@
               >
                  <div
                    v-if="item.children?.length && depth === i"
-                   style="width: 4.4rem; height: 4.4rem"
-                   class="flex items-center justify-center mr-15"
+                   class="flex items-center justify-center mr-15 w-[4.4rem] h-[4.4rem]"
                    @click="onCollapseItem(item)"
                  >
                     <base-icon-wrapper
@@ -46,9 +45,8 @@
         <div class="flex items-center grow" :class="{'categories-list__item-wrapper': isChild}">
           <div
             @click="onCollapseItem(item)"
-            class="items-center justify-center hidden"
+            class="items-center justify-center hidden w-[4.4rem] h-[4.4rem]"
             :class="{'!flex': item.children?.length && !isChild}"
-            style="width: 4.4rem; height: 4.4rem"
           >
             <base-icon-wrapper
               class="cursor-pointer transition-transform translate-x-1"
@@ -102,7 +100,7 @@
   </base-table-row>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { BaseTableRow, BaseTableCell, BaseIconWrapper } from '@/components/elements-ui'
 
 const props = defineProps({
@@ -116,7 +114,20 @@ const props = defineProps({
     type: Number,
     default: () => 0
   }
-})
+});
+
+const emits = defineEmits(['edit', 'remove', 'add']);
+
+const onEdit = () => {
+  emits('edit');
+};
+
+const onAdd = () => {
+  emits('add');
+};
+const onRemove = () => {
+  emits('remove');
+};
 
 const handleInfoObject = (idx) => {
   const infoObjectCopy = { ...props.infoObject }
