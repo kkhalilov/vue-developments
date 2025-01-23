@@ -125,6 +125,7 @@ const onEdit = () => {
 const onAdd = () => {
   emits('add');
 };
+
 const onRemove = () => {
   emits('remove');
 };
@@ -133,11 +134,11 @@ const handleInfoObject = (idx) => {
   const infoObjectCopy = { ...props.infoObject }
   infoObjectCopy[props.depth] = idx === props.list?.length - 1
   return infoObjectCopy
-}
+};
 
 const onCollapseItem = (item) => {
   item.isCollapsed = !item.isCollapsed
-}
+};
 </script>
 
 <style lang="scss">
