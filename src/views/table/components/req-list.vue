@@ -108,7 +108,7 @@ const props = defineProps({
   isChild: Boolean,
   infoObject: {
     type: Object,
-    default: {}
+    default: () => {},
   },
   depth: {
     type: Number,
